@@ -1,0 +1,54 @@
+body {
+    background-color: #433368;
+    font-family: helvetica;
+    color: white;
+}
+
+.page-heading {
+    color: #61c7ce;
+    font-size: 45px;
+    margin: 15px 0px 0px 30px;
+    border-bottom: 3px solid white;
+}
+
+.my-circle {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.fb-button{
+    background-color: #3b5998;
+    height: 75px;
+    margin: 100px 0px 0px 0px;
+    min-width: 300px;
+}
+
+.email-button{
+    background-color: #ADD8E6;
+    height: 75px;
+    margin: 0px 0px 0px 0px;
+    min-width: 300px;
+}
+
+.big-words {
+    font-size: 25px;
+    color: white;
+    margin: 50px 0px 50px 0px;
+}
+.sign-in {
+    color: white;
+    margin-top: 100px;
+}
+.home-nav-box {
+    height: 50px;
+    background-color: #61c7ce;
+    margin: 50px 0px 0px 0px;
+    border-radius: 3%;
+    text-align: center;
+    color: white;
+    padding: 30px 0px 0px 0px;
+}
