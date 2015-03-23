@@ -1,11 +1,11 @@
 body {
-    background-color: #433368;
+    background-color: #5AB9BF;
     font-family: helvetica;
     color: white;
 }
 
 .page-heading {
-    color: #61c7ce;
+    color: #4C80CC;
     font-size: 45px;
     margin: 15px 0px 0px 30px;
     border-bottom: 3px solid white;
@@ -45,10 +45,21 @@ body {
 }
 .home-nav-box {
     height: 50px;
-    background-color: #61c7ce;
+    background-color: #4C80CC;
     margin: 50px 0px 0px 0px;
     border-radius: 3%;
     text-align: center;
     color: white;
     padding: 30px 0px 0px 0px;
+}
+.leaderboard-input{
+    color: black;
+}
+
+.login-input{
+    color: black;
+    
+}
+.player-box{
+    width: 200px;
 }

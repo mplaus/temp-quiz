@@ -1,7 +1,8 @@
+var myFirebaseRef = new Firebase("https://the-rundown.firebaseio.com/");
 var LEADERBOARD_SIZE = 5;
-
+console.log(LEADERBOARD_SIZE);
   // Create our Firebase reference
-  var scoreListRef = new Firebase('https://m963vtdtlih.firebaseio-demo.com//scoreList');
+  var scoreListRef = new Firebase('https://the-rundown.firebaseio.com/'  );
 
   // Keep a mapping of firebase locations to HTML elements, so we can move / remove elements as necessary.
   var htmlForPath = {};
@@ -52,10 +53,29 @@ var LEADERBOARD_SIZE = 5;
   };
   scoreListView.on('child_moved', changedCallback);
   scoreListView.on('child_changed', changedCallback);
+  
+  function submitScore(){
+     var newScore = Number($(correct-answers).val());
+      var name = $("#nameInput").val();
+      console.log(newScore);
+      $("#scoreInput").val("");
+
+      if (name.length === 0)
+        return;
+
+      var userScoreRef = scoreListRef.child(name);
+
+      // Use setWithPriority to put the name / score in Firebase, and set the priority to be the score.
+      userScoreRef.setWithPriority({ name:name, score:newScore }, newScore);
+    
+    
+  }
 
   // When the user presses enter on scoreInput, add the score, and update the highest score.
   $("#scoreInput").keypress(function (e) {
+    console.log("a key was pressed");
     if (e.keyCode == 13) {
+        console.log("enter pressed");
       var newScore = Number($("#scoreInput").val());
       var name = $("#nameInput").val();
       $("#scoreInput").val("");
