@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Data-Project</title>
+    <meta Content-Type: text/html; charset=utf-8>
+    <title>Page Title</title>
+        <!--Jquery-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <!--HighCharts-->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+        <!--Boostrop-->
+    <link rel= "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <!--My stuff-->
+    <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT' rel='stylesheet' type='text/css'>
+    <link rel= "stylesheet" href="mycss.css">
+
+    
+    
+    
+    <script>
+        
+        
+        var B = [];
+        var AD = [];
+        var row = [];
+        var good = []; 
+         console.log("doc is starting");
+        $(document).ready(function(){
+                     loadXML();
+		     });
+        function loadXML(){
+	     console.log("ready passed");  
+        $.ajax({
+		type: "GET",
+		url: "landfillData.xml",
+		dataType: "xml",
+		success: parseXML
+		});
+         
+	 console.log("ajax passed");  
+	}
+	
+	    function parseXML(xml) {
+                    console.log("ajax started");
+                
+
+        $(xml).find('ROW').each(function(){
+            console.log("once for every person");
+            var $ROW = $(this); 
+           // var AD = $Record.attr("AD");
+            good.push(parseInt($ROW.find("Landfill_Name").text()));
+	      good.push(parseFloar($ROW.find("Landfill_Name").text()));
+	  //  good.push (parseFloat($Record.find('good').text()));
+
+            
+	     console.log(Landfill_Name);
+	    
+	    
+	    
+     //   });
+      
+	buildChart();
+    })
+	
+    function buildChart(){
+	var chart1 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'chart',
+            type: 'bar'
+        },
+        title: {
+            text: 'Awards Won'
+        },
+        xAxis: {
+            categories: ['Hearst', 'Marrow', 'Woodward']
+        },
+        yAxis: {
+            title: {
+                text: 'Awards'
+            }
+        },
+        series: [{
+            name: 'Putlizers',
+            data: [1, 0, 4]
+        }, {
+            name: 'Other',
+            data: [1],
+        }]
+    });
+	
+    };
+	
+});
+    /*Data Structure
+    $(document).ready(function(){
+    loadXML();
+    })
+    
+    function loadXML(){
+    
+	parseXml();
+    }
+    
+    function parseXML(){
+	
+	buildHTML();
+	buildCharts();
+	buildTable;
+	
+    }
+    
+    function buildHTML(){
+    
+    }
+    
+    function buildCharts(){
+    
+    }
+    
+    function buildTable(){
+    
+    }*/
+    
+    
+    
+    $(function () { 
+        $('#bar-chart').highcharts({
+            chart: {
+                type: 'line'
+            },
+            title: {
+                text: 'Grades'
+            },
+         xAxis: {
+            categories: [B]
+         },
+        
+        yAxis: {
+            title: {
+                text: 'Grade'
+            }
+        },
+        labels:{
+            items: [{
+                html: 'Label',
+                style: {
+                    left: '900px',
+                    bottom: '0px'
+                    
+                }
+            }]
+        },
+        series: [{
+            name: 'Matt',
+            data: [AD]
+        
+            }]
+        });
+    });
+    
+    $(function () {
+
+    $(document).ready(function () {
+
+        // Build the chart
+        $('#pie-chart').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'Browser Market Share'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true   
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['Firefox',   45.0],
+                    ['IE',       26.8],
+                    {
+                        name: 'Chrome',
+                        y: 12.8,
+                        sliced: false,
+                        selected: true
+                    },
+                    ['Safari',    8.5],
+                    ['Opera',     6.2],
+                    ['Others',   0.7]
+                ]
+            }]
+        });
+    });
+
+});
+</script>
+    
+    
+</head>
+
+<body>
+
+<div class="row">
+    <div class="col-md-12" id="top-bar">
+        <div class="col-md-5">
+            <div class="col-md-3">
+                <a href="#">Subscribe</a>
+            </div>
+            <div class="col-md-5">
+                <a href="#">Customer Service</a>
+            </div>
+            <div class="col-md-4">
+                <a href="#">Zone Rewards</a>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+            <div class="col-md-3">
+                <a href="#">Classifieds</a>
+            </div>
+            <div class="col-md-2">
+                <a href="#">Jobs</a>
+            </div>
+            <div class="col-md-2">
+                <a href="#">Cars</a>
+            </div>
+            <div class="col-md-2">
+                <a href="#">Homes</a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">Apartments</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" id="title-bar">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">The News<span style="color: #FF2219;">&</span>Observer</div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" id="my-nav-bar">
+        <div class="row">
+        <div class="col-md-11">
+            <div class="col-md-1">
+                <a href="#">Home</a>
+            </div>
+            <div class="col-md-1">
+                <a href="#">News</a>
+            </div>
+            <div class="col-md-1">
+                <a href="#">Sports</a>
+            </div>
+            <div class="col-md-1">
+                <a href="#">Business</a>
+            </div>
+            <div class="col-md-1">
+                <a href="#">Politics</a>
+            </div>
+            <div class="col-md-1">
+                <a href="#">Living</a>
+            </div>
+            <div class="col-md-1">
+                <a href="#">Opinion</a>
+            </div>
+            <div class="col-md-1">
+                <a href="#">Community</a>
+            </div>
+            <div class="col-md-1">
+                <a href="#">Obituaries</a>
+            </div>
+            <div class="col-md-1">
+                <a href="#">Deals</a>
+            </div>
+            <div class="col-md-1">
+                <a href="#">Classifieds</a>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="col-md-1">
+            <span class="glyphicon glyphicon-search"></span>
+        </div>
+        </div>
+    </div>
+</div>
+<div id="bar-chart" style="width:100%; height:400px;"></div>
+<div id="pie-chart" style="width:50%; height:400px;"></div>
+<iframe src="https://www.google.com/maps/d/embed?mid=zpoQ4RfN5Dmo.kzWfss2MEry4" width="640" height="480"></iframe>
+
+</body>
+</html>

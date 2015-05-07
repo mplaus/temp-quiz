@@ -1,14 +1,75 @@
 body {
-    background-color: #5AB9BF;
+    background-color: #D7DADB;
     font-family: helvetica;
     color: white;
 }
 
+td {
+    border-top: solid 1px white;
+    padding-top: 5px;
+    padding-left: 50px;
+    font-size: 17px;
+}
+
+tr {
+    border-top: solid 1px white;
+}
+
+a {
+    color: white;
+}
+a:hover {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+#my-top-bar {
+    background-color: #6DBCDB;
+    height: 80px;
+    
+    padding-top: 10px;
+}
+#my-nav-bar {
+    background-color: #6DBCDB;
+    height: 45px;
+    padding-top: 5px;
+    font-size: 14px;
+    font-family: Arial;
+    padding-top: 10px;
+    
+}
+img, .nav-icon{
+    min-height: 0px;
+    height: 30px;
+    margin: 0px 0px 5px 5px;
+}
+    
+.enter-box{
+    /*background-color: #6DBCDB;*/
+    background-color: #2C3E50;
+    margin-top: 50px;
+    padding: 0px 0px 0px 0px;
+    height: 125px;
+    border-radius: 10px;
+}
+.enter-name{
+    margin: 20px 0px 0px 25px;
+}
+.name-box{
+    margin: 0px 0px 50px 25px ;
+    height: 40px;
+}
+.glyphicon {
+    color: white;
+    font-size: 18px;
+}
 .page-heading {
-    color: #4C80CC;
-    font-size: 45px;
-    margin: 15px 0px 0px 30px;
+    color: #BF1913;
+    font-size: 2.6em;
+    /*margin: 15px 0px 0px 30px;*/
     border-bottom: 3px solid white;
+    /*font-family: 'Courgette', cursive;*/
+    font-family: 'Open Sans', sans-serif;
 }
 
 .my-circle {
@@ -45,12 +106,12 @@ body {
 }
 .home-nav-box {
     height: 50px;
-    background-color: #4C80CC;
-    margin: 50px 0px 0px 0px;
-    border-radius: 3%;
+    background-color: #2C3E50;
+    margin: 50px 0px 50px 0px;
     text-align: center;
     color: white;
-    padding: 30px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
+    
 }
 .leaderboard-input{
     color: black;
@@ -61,5 +122,63 @@ body {
     
 }
 .player-box{
-    width: 200px;
+    width: 150px;
+    font-size: 20px;
+    text-align: center;
+
+}
+.score-box{
+    width: 150px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.leaderboard-style{
+    margin: 50px 0px 0px 0px;
+    border: solid 1px white;
+    padding: 5px 5px 5px 5px;
+    background-color: #6DBCDB;
+    border-radius: 10%;
+}
+.leaderboard-title{
+    font-size: 2em;
+    
+}
+.possible_answer{
+    background-color: #2C3E50;
+}
+.possible_answer:hover{
+    background-color: #46637F;
+}
+.about-text{
+    
+    font-size: 20px;
+}
+.about-box{
+    background-color:  #6DBCDB;
+    border-radius: 8%;
+    margin: 50px 0px 0px 0px;
+    padding: 25px 25px 25px 25px;
+}
+.how_you_did {
+    background-color: #46637F;
+}
+
+.logo-box {
+    
+    width: 500px;
+}
+.wrong-answer {
+	background: #FF8362;	
+}
+
+.correct-answer {
+    background: #62DA97;
+}
+.show {
+    background-color: #6DBCDB;
+    padding: 5px 5px 5px 10px;
+    border-radius: 10px;
+    margin: 20px 0px 20px 0px;
 }
